@@ -11,7 +11,7 @@ Using the technoligies below:
 # Complete a project to manage companies and their employees.
 
 Required Features
-- [ ] Basic Laravel Auth: ability to log in as administrator
+- [x] Basic Laravel Auth: ability to log in as administrator
 - [x] Use database seeds to create first user with email admin@admin.com and password “password”
 - [ ] CRUD functionality for two menu items: Companies and Employees.
 - [ ] Companies DB table with fields: Name (required), email (required), logo, website
