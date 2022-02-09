@@ -12,7 +12,7 @@ Using the technoligies below:
 
 Required Features
 - [ ] Basic Laravel Auth: ability to log in as administrator
-- [ ] Use database seeds to create first user with email admin@admin.com and password “password”
+- [x] Use database seeds to create first user with email admin@admin.com and password “password”
 - [ ] CRUD functionality for two menu items: Companies and Employees.
 - [ ] Companies DB table with fields: Name (required), email (required), logo, website
 - [ ] Employees DB table consists of these fields: First name (required), last name (required), Company (foreign key to Companies), email, phone
