@@ -5,7 +5,7 @@
 Using the technoligies below:
 
 - [x]  Laravel v8
-- [ ] Authentication - JWT
+- [x] Authentication - JWT
 - [x] Database - MySQL
 
 # Complete a project to manage companies and their employees.
@@ -21,11 +21,11 @@ Required Features
 - [ ] Use Laravel resource controllers with default methods – index, create, store etc.
 - [ ] Use Laravel’s validation function, using Request classes
 - [ ] Use Laravel’s pagination showing Companies/Employees list, 10 entries per page
-- [ ] Use Laravel make:auth as default Bootstrap-based design theme
+- [x] Use Laravel make:auth as default Bootstrap-based design theme
 - [ ] Build REST APIs that offer the above Authentication and CRUD functionality
 
 Please Note:
 - [x] Create a Repo on GitHub for your project
 - [ ] Task timeline is 3 days from the day you received it
 
-- [ ] end the link of your project github repo to: jobs@projectcode.ug
+- [ ] Send the link of your project github repo to: jobs@projectcode.ug
