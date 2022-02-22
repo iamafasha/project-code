@@ -25,7 +25,9 @@
                     <td>
                         <div class="d-flex justify-content-evenly">
                             <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-primary">Edit</a>
-                            <form class="d-block" action="{{ route('companies.destroy', $company->id) }}" method="POST">
+                            <form class="d-block" action="{{ route('companies.destroy',['company'=>$company->id]) }}" method="POST">
+                             @csrf
+                             @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </div>

@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
 
 class CompanyController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -56,7 +62,6 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        //
     }
 
     /**
@@ -67,7 +72,7 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
+        return view('company.edit', compact('company'));
     }
 
     /**
@@ -79,7 +84,26 @@ class CompanyController extends Controller
      */
     public function update(UpdateCompanyRequest $request, Company $company)
     {
-        //
+        //check if file logo has been uploaded
+        if ($request->hasFile('logo')) {
+            //delete old logo
+            Storage::delete($company->logo);
+            //store new logo
+            $path = $request->file('logo')->store('public');
+            $company->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'website' => $request->website,
+                'logo' => $path,
+            ]);
+        } else {
+            $company->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'website' => $request->website,
+            ]);
+        }
+        return redirect()->route('companies.index')->with('success', 'Company updated successfully');
     }
 
     /**
@@ -90,6 +114,12 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        //
+
+        //remove company logo
+        if ($company->logo) {
+            Storage::delete($company->logo);
+        }
+        $company->delete();
+        return redirect()->route('companies.index')->with('success', 'Company deleted successfully');
     }
 }
