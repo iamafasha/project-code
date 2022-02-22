@@ -53,10 +53,10 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link"  v-pre>Companies</a>
+                                <a class="nav-link"  href={{ route('companies.index') }} v-pre>Companies</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  v-pre>Employees</a>
+                                <a class="nav-link"  href={{ route('employees') }}  v-pre>Employees</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -3,6 +3,13 @@
 @section('content')
 
         <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                        <a href="{{ route('companies.create') }}" class="btn btn-primary">Add a new Company</a>
+                </div>
+            </div>
+
             <table class="table">
             <thead>
                 <tr>
@@ -24,6 +31,7 @@
                     <td><a href="{{ $company->website }}">{{ $company->website }}</a> </td>
                     <td>
                         <div class="d-flex justify-content-evenly">
+                            <a href="{{ route('company.employees.index', $company->id) }}" class="btn btn-primary">View Employees</a>
                             <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-primary">Edit</a>
                             <form class="d-block" action="{{ route('companies.destroy',['company'=>$company->id]) }}" method="POST">
                              @csrf

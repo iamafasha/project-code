@@ -44,7 +44,12 @@ class CompanyController extends Controller
      */
     public function store(StoreCompanyRequest $request)
     {
-        $path = $request->file('logo')->store('public');
+        $path = null;
+        //if $request->file('logo') is not null
+        if ($request->hasFile('logo')) {
+            $path = $request->file('logo')->store('public');
+        }
+        //create new company
         $company = Company::create([
             'name' => $request->name,
             'email' => $request->email,

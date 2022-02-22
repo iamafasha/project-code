@@ -17,15 +17,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/employees', [EmployeeController::class,'list'] )->name('employees');
 
 Route::resources([
     'companies' => CompanyController::class,
-    'employees' => EmployeeController::class,
 ]);
+
+Route::resource('company.employees', EmployeeController::class)->parameters([
+    'company' => 'company_id'
+]);
+
