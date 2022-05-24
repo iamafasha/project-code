@@ -1,6 +1,6 @@
         <div class="form-group">
             <label for="title">Name</label>
-            <input class="form-control" type="text"  name="name"  required value={{ $company->name??"" }}>
+            <input class="form-control" type="text"  name="name"  value={{ $company->name??"" }}>
         </div>
 
         <div class="form-group">

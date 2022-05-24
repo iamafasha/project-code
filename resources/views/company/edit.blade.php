@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+    @include('inc.error')
     <form  action="{{ route('companies.update', $company->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
 

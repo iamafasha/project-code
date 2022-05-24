@@ -24,7 +24,8 @@ class StoreCompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'name',
+            'email' => 'email'
         ];
     }
 }
